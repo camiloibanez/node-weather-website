@@ -18,7 +18,7 @@ const forecast = (longitude, latitude, callback) => {
                 icon,
                 forecast: description + ". It is currently " + temperature + " degrees out. It feels like " + feelslike + " degrees out. There is a " +
                     precip + "% chance of rain. The humidity is " + humidity + "%."
-            }  )
+            })
         }
     })
 }
