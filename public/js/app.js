@@ -4,12 +4,12 @@ const messageOne = document.querySelector('#message-1')
 const messageTwo = document.querySelector('#message-2')
 
 
-
 weatherForm.addEventListener('submit', (e) => {  // e -> event
     e.preventDefault()
 
     const location = search.value
-    let endpoint = 'http://localhost:3000/weather?address=' + location
+
+    let endpoint = '/weather?address=' + location
 
     messageOne.textContent = 'Processing your request...'
     messageTwo.textContent = ''
