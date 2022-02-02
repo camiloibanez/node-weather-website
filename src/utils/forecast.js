@@ -11,9 +11,14 @@ const forecast = (longitude, latitude, callback) => {
         } else {
             const data = body.current
             let description = data.weather_descriptions[0]
-            let {temperature, feelslike} = data
+            let icon = data.weather_icons[0]
+            let {temperature, feelslike, precip, humidity} = data
 
-            callback(undefined, description + ". It is currently " + temperature + " degrees out. It feels like " + feelslike + " degrees out.")
+            callback(undefined, {
+                icon,
+                forecast: description + ". It is currently " + temperature + " degrees out. It feels like " + feelslike + " degrees out. There is a " +
+                    precip + "% chance of rain. The humidity is " + humidity + "%."
+            }  )
         }
     })
 }
